@@ -9,7 +9,7 @@ def send_email(to_addr, subject, message_text):
     message = "From: %s\nTo: %s\nSubject: %s\n\n%s" % (email_config.FROM_ADDR, to_addr, subject, message_text)
 
     try:
-        server = smtplib.SMTP_SSL('smtp.mail.yahoo.com', 465)
+        server = smtplib.SMTP_SSL(email_config.SMTP_SSL_ADDR, email_config.PORT)
         server.login(email_config.FROM_ADDR, email_config.PASSWORD)
         server.sendmail(email_config.FROM_ADDR, to_addr, message)
         server.quit()    
