@@ -1,2 +1,5 @@
 .vscode/
 client_secret.json
+team_config.*
+email_config.*
+email_lists.*
